@@ -14,8 +14,3 @@ distname=$(jq -r '.distributionName' webprovisions.json)
 curl -X PUT https://registry.webprovisions.io/-/api/distributions/$distname/status \
     -H "Content-Type: application/json" \
     -d '{"version": "'$wp_version'", "status": "complete"}'
-# #!/bin/sh -l
-
-# echo "Hello $1"
-# time=$(date)
-# echo "time=$time" >> $GITHUB_OUTPUT
