@@ -11,6 +11,6 @@ distname=$(jq -r '.distributionName' webprovisions.json)
 
 /bin/minio-binaries/mc cp --recursive ./dist/ wpminio/$orgname/$distname/$wp_version/
 
-curl -X PUT $INPUT_WP_API/-/api/distributions/$distname/status \
+curl -X PUT $INPUT_WP_API/distributions/$distname/status \
     -H "Content-Type: application/json" \
     -d '{"version": "'$wp_version'", "status": "complete"}'
